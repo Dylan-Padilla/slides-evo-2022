@@ -448,7 +448,7 @@ Vitt and Congdon (1978); Vitt and Price (1982); Mesquita et al. (2016)
 
 # Effects of maternal mass and foraging mode on reproductive output
 
-- We used PGLS to model the relationship among maternal mass, foraging mode and reproductive output trough the `gls` function from the [`nlme` `r emo::ji("package")`](https://cran.r-project.org/web/packages/nlme/index.html) of `r icons::fontawesome("r-project")`, v. 3.1.153
+- We used PGLS to model the relationship among maternal mass, foraging mode and reproductive output through the `gls` function from the [`nlme` `r emo::ji("package")`](https://cran.r-project.org/web/packages/nlme/index.html) of `r icons::fontawesome("r-project")`, v. 3.1.153
 
 --
 
