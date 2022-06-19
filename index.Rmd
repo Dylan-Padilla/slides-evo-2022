@@ -466,7 +466,7 @@ Vitt and Congdon (1978); Vitt and Price (1982); Mesquita et al. (2016)
 
 <center>
 
-<img src = "images/Figure2.jpeg"  width = "590" height = "590">
+<img src = "images/Figure2.jpeg"  width = "580" height = "580">
 
 </center>
 
@@ -478,7 +478,7 @@ Vitt and Congdon (1978); Vitt and Price (1982); Mesquita et al. (2016)
 
 <center>
 
-<img src = "images/Figure2.jpeg"  width = "590" height = "590">
+<img src = "images/Figure2.jpeg"  width = "580" height = "580">
 
 </center>
 
@@ -486,6 +486,7 @@ Vitt and Congdon (1978); Vitt and Price (1982); Mesquita et al. (2016)
 ---
 
 # The evolution of reproductive effort in lizards was driven by an interaction between maternal mass and foraging mode
+
 
 <center>
 
