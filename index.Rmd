@@ -685,7 +685,7 @@ mtext("(c)", at = 0.001, line = 1, cex = 0.8, font = 2)
 
 <br><br>
 
-To find more, see `r emo::ji("index")`
+Find the paper here `r emo::ji("index")`
 
 </center>
 
