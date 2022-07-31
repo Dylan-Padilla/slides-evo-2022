@@ -1,15 +1,20 @@
 ---
 title: "The correlated evolution of foraging mode and reproductive effort in lizards"
-author: <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>Dylan Padilla, Dale DeNardo & Michael Angilletta <br/> June, 2022 <br /> `r icon_style(fontawesome("envelope", style = "solid"), scale = 1, fill = "red")` dpadil10@asu.edu | `r icon_style(fontawesome("link", style = "solid"), scale = 1, fill = "red")` https://dylanpadilla.netlify.app/
+author: <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>Dylan Padilla, Dale DeNardo & Michael Angilletta <br/> June, 2022 <br/> `r icon_style(fontawesome("envelope", style = "solid"), scale = 1, fill = "red")` dpadil10@asu.edu | `r icon_style(fontawesome("link", style = "solid"), scale = 1, fill = "red")` https://dylanpadilla.netlify.app/
 output:
   xaringan::moon_reader:
-    css: ["default", "default.css"]
     lib_dir: libs
+    css: ['default', 'default.css']
+    seal: true
     nature:
-      highlightStyle: github
+      ratio: '16:9'
+      slideNumberFormat: '%current%' 
+      highlightStyle: ir-black
       highlightLines: true
-      countIncrementalSlides: true
+      countIncrementalSlides: false
 ---
+
+
 
 ```{r setup, include=FALSE}
 require(rmarkdown)
@@ -23,9 +28,15 @@ options(htmltools.dir.version = FALSE)
 knitr::opts_chunk$set(dpi = 300,            # ensures high resolution images
                       echo = FALSE,         # FALSE: code chunks don't show
                       warning = FALSE,      # FALSE: suppresses warning messages
-                      error = FALSE)        # FALSE: Suppresses error messages
+                      error = FALSE,       # FALSE: Suppresses error messages
+                      fig.align = "center")
+
+```
 
 
+
+```{r xaringan-slide-tone, echo=FALSE}
+xaringanExtra::use_slide_tone()
 ```
 
 
@@ -121,7 +132,7 @@ Camila Tabares
 # Hypotheses about how an organism’s foraging mode relates to its life history
 
 
-```{r, echo = FALSE, fig.height = 7, fig.width = 7, fig.align = "center", warning = FALSE, comment = " ", message = FALSE}
+```{r, echo = FALSE, fig.height = 6, fig.width = 7, fig.align = "center", warning = FALSE, comment = " ", message = FALSE}
 
 
 require(shape)
@@ -155,7 +166,7 @@ Arrows(6.6, 7, 7, 7, lwd = 2, arr.type = "triangle")
 
 # Hypotheses about how an organism’s foraging mode relates to its life history
 
-```{r, echo = FALSE, fig.height = 7, fig.width = 7, fig.align = "center", warning = FALSE, comment = " ", message = FALSE}
+```{r, echo = FALSE, fig.height = 6, fig.width = 7, fig.align = "center", warning = FALSE, comment = " ", message = FALSE}
 
 par(mar = c(1, 1, 1, 1))
 plot(NA, NA, xlim = c(0, 10), ylim = c(-1, 10), ann = FALSE, axes = FALSE)
@@ -197,7 +208,7 @@ Arrows(8.3, 4.76, 6.3, 6.2, lwd = 2, arr.type = "triangle")
 
 # Hypotheses about how an organism’s foraging mode relates to its life history
 
-```{r, echo = FALSE, fig.height = 7, fig.width = 7, fig.align = "center", warning = FALSE, comment = " ", message = FALSE}
+```{r, echo = FALSE, fig.height = 6, fig.width = 7, fig.align = "center", warning = FALSE, comment = " ", message = FALSE}
 
 
 par(mar = c(1, 1, 1, 1))
@@ -248,7 +259,7 @@ Arrows(5, 6.3, 5, 4.8, lwd = 2, arr.type = "triangle")
 # Hypotheses about how an organism’s foraging mode relates to its life history
 
 
-```{r, echo = FALSE, fig.height = 7, fig.width = 7, fig.align = "center", warning = FALSE, comment = " ", message = FALSE}
+```{r, echo = FALSE, fig.height = 6, fig.width = 7, fig.align = "center", warning = FALSE, comment = " ", message = FALSE}
 
 par(mar = c(1, 1, 1, 1))
 plot(NA, NA, xlim = c(0, 10), ylim = c(-1, 10), ann = FALSE, axes = FALSE)
@@ -518,7 +529,7 @@ Promoting follicular growth
 
 <center>
 
-<img src = "images/fat.png"  width = "390" height = "290">
+<img src = "images/fat.png"  width = "390" height = "290"><br/>
 
 Increasing energy stores to initiate reproduction
 
@@ -544,12 +555,10 @@ Reducing age at first reproduction
 
 ---
 
-
-```{r, fig.height = 3.5, fig.width = 3.5, comment = " ", message = FALSE}
+```{r, fig.height = 4, fig.width = 4, comment = " ", message = FALSE, dpi = 190}
 
 
 ## A
-
 
 bertalanffy <- function(la, k, t){
 
@@ -563,10 +572,10 @@ bertalanffy <- function(la, k, t){
 fem1 <- bertalanffy(la = 4, k = 0.3, t = seq(1, 35, 1))
 fem2 <- bertalanffy(la = 4.9, k = 0.25, t = seq(1, 35, 1))
 
-par(mar = c(5, 4, 1, 1), mgp = c(1, 1, 1))
+par(mar = c(5, 4, 1, 1), mgp = c(0.8, 1, 1))
 plot(fem1 - 0.7 ~ seq(1, 35, 1), xlim = c(-2, 35), ylim = c(-6, 8), type = "l", lwd = 2, xaxt = "n", yaxt = "n", ylab = "Cumulative energy gain (m)", xlab = "time (t)")
 lines(seq(1, 35, 1) - 0.48, fem2, lwd = 2, lty = 4)
-legend("topleft", legend = c("large female", "small female"), lty = c(4, 1), lwd = c(2, 2), bty = "n", cex = 0.7)
+legend("topleft", legend = c("large female", "small female"), lty = c(4, 1), lwd = c(2, 2), bty = "n", cex = 0.5)
 
 
 ```
@@ -575,7 +584,7 @@ legend("topleft", legend = c("large female", "small female"), lty = c(4, 1), lwd
 ---
 
 
-```{r, fig.height = 3.5, fig.width = 3.5, comment = " ", message = FALSE}
+```{r, fig.height = 4, fig.width = 4, comment = " ", message = FALSE, dpi = 190}
 
 
 ## B
@@ -586,7 +595,7 @@ fem4 <- bertalanffy(la = 10, k = 0.21, t = seq(1, 35, 1))
 par(mar = c(5, 4, 1, 1), mgp = c(1, 1, 1))
 plot(fem3 - 0.7 ~ seq(1, 35, 1), xlim = c(4, 35), ylim = c(-6, 5), type = "l", lwd = 2,  col = "skyblue", xaxt = "n", yaxt = "n", ylab = "Cumulative energy gain (m)", xlab = " ")
 lines(seq(1, 35, 1), fem4 - 8, lwd = 2, lty = 2, col = "purple")
-legend("topleft", legend = c("sit and wait", "widely foraging"), lty = c(1, 2), lwd = c(2, 2), col = c("skyblue", "purple"), bty = "n", cex = 0.7)
+legend("topleft", legend = c("sit and wait", "widely foraging"), lty = c(1, 2), lwd = c(2, 2), col = c("skyblue", "purple"), bty = "n", cex = 0.5)
 mtext("time (t)", side = 1, at = 25, line = 0.9, cex = 0.8)
 
 ```
@@ -596,7 +605,7 @@ mtext("time (t)", side = 1, at = 25, line = 0.9, cex = 0.8)
 ---
 
 
-```{r, fig.height = 3.5, fig.width = 3.5, comment = " ", message = FALSE}
+```{r, fig.height = 4, fig.width = 4, comment = " ", message = FALSE, dpi = 190}
 
 
 ## B
@@ -609,7 +618,7 @@ plot(fem3 - 0.7 ~ seq(1, 35, 1), xlim = c(4, 35), ylim = c(-6, 5), type = "l", l
 lines(seq(1, 35, 1), fem4 - 8, lwd = 2, lty = 2, col = "purple")
 segments(2.6, -6.5, 25, 6.2, lwd = 2)
 segments(2.6, -6.5, 33.2, 6, lwd = 2)
-legend("topleft", legend = c("sit and wait", "widely foraging"), lty = c(1, 2), lwd = c(2, 2), col = c("skyblue", "purple"), bty = "n", cex = 0.7)
+legend("topleft", legend = c("sit and wait", "widely foraging"), lty = c(1, 2), lwd = c(2, 2), col = c("skyblue", "purple"), bty = "n", cex = 0.5)
 mtext("time (t)", side = 1, at = 25, line = 0.9, cex = 0.8)
 
 
@@ -620,7 +629,7 @@ mtext("time (t)", side = 1, at = 25, line = 0.9, cex = 0.8)
 ---
 
 
-```{r, fig.height = 3.5, fig.width = 3.5, comment = " ", message = FALSE}
+```{r, fig.height = 4, fig.width = 4, comment = " ", message = FALSE, dpi = 190}
 
 
 ## B
@@ -637,7 +646,7 @@ segments(13.2, -0.5, 2.6, -0.5, lwd = 2, lty = 2, col = "purple")
 segments(15.9, -1.1, 2.6, -1.1, lwd = 2, col = "skyblue")
 segments(13.2, -0.5, 13.2, -7, lwd = 2, lty = 2, col = "purple")
 segments(15.9, -1.1, 15.9, -7, lwd = 2, col = "skyblue")
-legend("topleft", legend = c("sit and wait", "widely foraging"), lty = c(1, 2), lwd = c(2, 2), col = c("skyblue", "purple"), bty = "n", cex = 0.7)
+legend("topleft", legend = c("sit and wait", "widely foraging"), lty = c(1, 2), lwd = c(2, 2), col = c("skyblue", "purple"), bty = "n", cex = 0.5)
 mtext("(b)", at = 0.6, line = 1, cex = 0.8, font = 2)
 mtext(expression("t"[wf]), side = 1, at = 13.2, line = 0.5, cex = 0.8, font = 2)
 mtext(expression("t"[sw]), side = 1, at = 17.2, line = 0.5, cex = 0.8, font = 2)
@@ -650,15 +659,15 @@ mtext("time (t)", side = 1, at = 25, line = 0.9, cex = 0.8)
 ---
 
 
-```{r, fig.height = 3.5, fig.width = 3.5, comment = " ", message = FALSE}
+```{r, fig.height = 4, fig.width = 4, comment = " ", message = FALSE, dpi = 190}
 
 ## C
 
-par(mar = c(5, 4, 1, 1), mgp = c(1, 1, 1))
+par(mar = c(5, 4, 1, 1), mgp = c(0.8, 1, 1))
 curve(2 - log(x)^2, ylim = c(-0.5, 3), xlim = c(0.1, 1), lwd = 2, lty = 2, col = "purple", xaxt = "n", yaxt = "n", ylab = "Cumulative energy gain (m)", xlab = "time (t)")
 curve(log(x) + 1, add = TRUE, lwd = 2, col = "skyblue")
-legend("topleft", legend = c("sit and wait", "widely foraging"), lty = c(1, 2), lwd = c(2, 2), col = c("skyblue", "purple"), bty = "n", cex = 0.7)
-mtext("(c)", at = 0.001, line = 1, cex = 0.8, font = 2)
+legend("topleft", legend = c("sit and wait", "widely foraging"), lty = c(1, 2), lwd = c(2, 2), col = c("skyblue", "purple"), bty = "n", cex = 0.5)
+mtext("(c)", at = 0.001, line = 1, cex = 0.7, font = 2)
 
 
 ```
